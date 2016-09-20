@@ -15,10 +15,10 @@
 		400320281D9072200056EE64 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 400320261D9072200056EE64 /* LaunchScreen.storyboard */; };
 		400320331D9072200056EE64 /* RC2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400320321D9072200056EE64 /* RC2Tests.swift */; };
 		4003203E1D9079880056EE64 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 4003203D1D9079880056EE64 /* Podfile */; };
-		400320411D908F120056EE64 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 400320401D908F120056EE64 /* GoogleService-Info.plist */; };
 		40AD2EAF1D91DFA400248833 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AD2EAE1D91DFA400248833 /* User.swift */; };
 		40AD2EB11D91E00000248833 /* FriendList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AD2EB01D91E00000248833 /* FriendList.swift */; };
 		40AD2EB31D91E1BA00248833 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AD2EB21D91E1BA00248833 /* Session.swift */; };
+		40AD2EB71D91EE4D00248833 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 40AD2EB61D91EE4D00248833 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,10 +44,10 @@
 		400320341D9072200056EE64 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4003203D1D9079880056EE64 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		4003203F1D907B480056EE64 /* FaceBookHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FaceBookHeader.h; sourceTree = "<group>"; };
-		400320401D908F120056EE64 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		40AD2EAE1D91DFA400248833 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		40AD2EB01D91E00000248833 /* FriendList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendList.swift; sourceTree = "<group>"; };
 		40AD2EB21D91E1BA00248833 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		40AD2EB61D91EE4D00248833 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		539E225F8B0C6934D43E2389 /* Pods_RC2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RC2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9234291C7029C5EC81097699 /* Pods-RC2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RC2.release.xcconfig"; path = "Pods/Target Support Files/Pods-RC2/Pods-RC2.release.xcconfig"; sourceTree = "<group>"; };
 		EAD615DA48B75EFB4FDED67F /* Pods-RC2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RC2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RC2/Pods-RC2.debug.xcconfig"; sourceTree = "<group>"; };
@@ -102,8 +102,8 @@
 				400320241D9072200056EE64 /* Assets.xcassets */,
 				400320261D9072200056EE64 /* LaunchScreen.storyboard */,
 				4003203F1D907B480056EE64 /* FaceBookHeader.h */,
+				40AD2EB61D91EE4D00248833 /* GoogleService-Info.plist */,
 				400320291D9072200056EE64 /* Info.plist */,
-				400320401D908F120056EE64 /* GoogleService-Info.plist */,
 				4003203D1D9079880056EE64 /* Podfile */,
 			);
 			path = RC2;
@@ -239,7 +239,7 @@
 			files = (
 				400320281D9072200056EE64 /* LaunchScreen.storyboard in Resources */,
 				400320251D9072200056EE64 /* Assets.xcassets in Resources */,
-				400320411D908F120056EE64 /* GoogleService-Info.plist in Resources */,
+				40AD2EB71D91EE4D00248833 /* GoogleService-Info.plist in Resources */,
 				4003203E1D9079880056EE64 /* Podfile in Resources */,
 				400320231D9072200056EE64 /* Main.storyboard in Resources */,
 			);
