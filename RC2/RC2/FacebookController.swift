@@ -20,7 +20,7 @@ class FacebookController {
     let firebaseURL = FIRDatabase.database().referenceFromURL("https://rc2p-15dd8.firebaseio.com/")
     
     //FIREBASE FACEBOOK: Integration with Firebase through authentication from Facebook
-
+    
     func facebookCredential() {
         
         let credential = FIRFacebookAuthProvider.credentialWithAccessToken(FBSDKAccessToken.currentAccessToken().tokenString)
@@ -29,7 +29,7 @@ class FacebookController {
             if let error = error {
                 print(error)
             } else {
-            
+                
                 print("Firebase authenticated")
                 
                 //FIREBASE: Create a user in database with the same authentication UID
@@ -37,7 +37,7 @@ class FacebookController {
                 FIRAuth.auth()?.addAuthStateDidChangeListener({ (auth, user) in
                     
                     if (user != nil) {
-                    
+                        
                         guard let user = user else { return }
                         guard let photoLink = user.photoURL else { return }
                         let photoStringURL = photoLink.absoluteString
@@ -56,12 +56,14 @@ class FacebookController {
                         
                         self.returnMyData()
                         self.returnFriendListData()
+                        self.createSession()
+                        self.newSessionHour(2015, month: 6, day: 5, hour: 6, miles: 500)
                     }
                 })
             }
         }
     }
-
+    
     // FACEBOOK returns data on current user
     func returnMyData(){
         if((FBSDKAccessToken.currentAccessToken()) != nil){
@@ -80,12 +82,12 @@ class FacebookController {
                     let gender = resultdict.objectForKey("gender") as! String
                     
                     // Adds Facebook data to Firebase
-
+                    
                     let detailedUser = ["fID": fID, "firstName": firstName, "lastName": lastName, "gender": gender]
                     
                     self.addUserDetail(detailedUser)
                     
-                 }
+                }
             })
         }
         
@@ -102,7 +104,7 @@ class FacebookController {
             }
         })
     }
-
+    
     // FACEBOOK returns data on current user's friends with the app
     func returnFriendListData() {
         let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "/me/friends", parameters: nil)
@@ -124,8 +126,7 @@ class FacebookController {
                     let id = valueDict.objectForKey("id") as! String
                     let name = valueDict.objectForKey("name") as! String
                     
-//                    print("the id value is \(id)")
-//                    print("\(name)")
+                    //                    print("the id value is \(id)") print("\(name)")
                     
                     self.createFriend("\(id)", friendName: "\(name)")
                     
@@ -143,7 +144,7 @@ class FacebookController {
     }
     
     // FIREBASE adds information on friends to Firebase from Facebook
-
+    
     func createFriend(friendID: String, friendName: String) {
         let usersReference = firebaseURL.child("users/\(uid)")
         
@@ -155,5 +156,25 @@ class FacebookController {
                 return
             }
         })
+    }
+    
+    func createSession() {
+        let sessionInfo = ["Total Time" : 2016]
+        let usersReference = firebaseURL.child("users/\(uid)")
+        usersReference.child("Session").child("Year").child("Month").child("Day").child("Hour").updateChildValues(sessionInfo, withCompletionBlock: { (error, ref) in
+            if error != nil {
+                print(error)
+                return
+            }
+        })
+    }
+    
+    func newSessionHour (year: Int, month: Int, day: Int, hour: Int, miles: Double) {
+        let hourlyMiles = ["Miles" : "\(miles)"]
+
+        
+        let usersReference = firebaseURL.child("users/\(uid)").child("Session").child("\(year)").child("\(month)").child("\(day)")
+        usersReference.child("\(hour)").updateChildValues(hourlyMiles)
+        
     }
 }
