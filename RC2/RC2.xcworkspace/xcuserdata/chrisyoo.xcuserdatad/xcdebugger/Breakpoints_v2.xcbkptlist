@@ -22,16 +22,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "RC2/LoginViewController.swift"
-            timestampString = "496098860.784618"
+            filePath = "RC2/FacebookController.swift"
+            timestampString = "496188414.477266"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "77"
-            endingLineNumber = "77"
-            landmarkName = "loginButton(_:didCompleteWithResult:error:)"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
+            landmarkName = "addUserDetail(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -41,13 +41,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "RC2/LoginViewController.swift"
-            timestampString = "496098995.157641"
+            filePath = "RC2/FacebookController.swift"
+            timestampString = "496188414.477266"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
-            landmarkName = "loginButton(_:didCompleteWithResult:error:)"
+            startingLineNumber = "177"
+            endingLineNumber = "177"
+            landmarkName = "newSessionHour(_:month:day:hour:miles:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
