@@ -64,7 +64,7 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
     }
     
     @IBAction func returnUserDataButtonTapped(sender: AnyObject) {
-        FacebookController.sharedController.returnUserData()
+        FacebookController.sharedController.facebookCredential()
     }
     //COPY
     
