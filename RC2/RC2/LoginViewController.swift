@@ -13,7 +13,9 @@ import Firebase
 import FirebaseAuth
 
 class ViewController: UIViewController, FBSDKLoginButtonDelegate {
-    let UID: String
+    var uid: String = ""
+    
+    static let sharedController = ViewController()
     
     @IBOutlet weak var faceBookButton: NSLayoutConstraint!
     
@@ -77,8 +79,8 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
                         let photoStringURL = photoLink.absoluteString
                         
                         let newUser = ["provider": user.providerID as String, "displayName": user.displayName! as String, "email": user.email! as String, "photoURL": photoStringURL as String]
-                        let uid = user.uid as String
-                        let usersReference = firebaseURL.child("users/\(uid)")
+                         self.uid = user.uid as String
+                        let usersReference = firebaseURL.child("users/\(self.uid)")
                         
                         usersReference.child("UserInfo").updateChildValues(newUser) { (err, ref) in
                             if err != nil {
@@ -95,16 +97,15 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
         }
     }
     
-    func createFriend() {
+    func createFriend(friendID: String, friendName: String) {
         let firebaseURL = FIRDatabase.database().referenceFromURL("https://rc2p-15dd8.firebaseio.com/")
         let userssReference = firebaseURL.child("users/\(uid)")
         
-        let friendsInfo = ["friends": ""]
-
+        let friendsInfo = [friendID: friendName]
 
         userssReference.child("FriendList").updateChildValues(friendsInfo, withCompletionBlock: { (err, ref) in
-            if error != nil {
-                print(error)
+            if err != nil {
+                print(err)
                 return
             }
         })

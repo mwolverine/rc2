@@ -39,6 +39,9 @@ class FacebookController {
                     
                     print("the id value is \(id)")
                     print("\(name)")
+                    
+                    ViewController.sharedController.createFriend("\(id)", friendName: "\(name)")
+                    
                 }
                 
                 let friends = resultdict.objectForKey("data") as! NSArray
