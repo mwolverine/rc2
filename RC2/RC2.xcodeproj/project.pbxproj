@@ -19,6 +19,7 @@
 		40AD2EB11D91E00000248833 /* FriendList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AD2EB01D91E00000248833 /* FriendList.swift */; };
 		40AD2EB31D91E1BA00248833 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AD2EB21D91E1BA00248833 /* Session.swift */; };
 		40AD2EB71D91EE4D00248833 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 40AD2EB61D91EE4D00248833 /* GoogleService-Info.plist */; };
+		40AD2EB91D93017F00248833 /* FacebookController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AD2EB81D93017F00248833 /* FacebookController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		40AD2EB01D91E00000248833 /* FriendList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendList.swift; sourceTree = "<group>"; };
 		40AD2EB21D91E1BA00248833 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		40AD2EB61D91EE4D00248833 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		40AD2EB81D93017F00248833 /* FacebookController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookController.swift; sourceTree = "<group>"; };
 		539E225F8B0C6934D43E2389 /* Pods_RC2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RC2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9234291C7029C5EC81097699 /* Pods-RC2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RC2.release.xcconfig"; path = "Pods/Target Support Files/Pods-RC2/Pods-RC2.release.xcconfig"; sourceTree = "<group>"; };
 		EAD615DA48B75EFB4FDED67F /* Pods-RC2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RC2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RC2/Pods-RC2.debug.xcconfig"; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				4003201F1D90721F0056EE64 /* LoginViewController.swift */,
+				40AD2EB81D93017F00248833 /* FacebookController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -310,6 +313,7 @@
 				40AD2EB31D91E1BA00248833 /* Session.swift in Sources */,
 				400320201D9072200056EE64 /* LoginViewController.swift in Sources */,
 				4003201E1D90721F0056EE64 /* AppDelegate.swift in Sources */,
+				40AD2EB91D93017F00248833 /* FacebookController.swift in Sources */,
 				40AD2EAF1D91DFA400248833 /* User.swift in Sources */,
 				40AD2EB11D91E00000248833 /* FriendList.swift in Sources */,
 			);
