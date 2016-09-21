@@ -16,12 +16,12 @@ class FacebookController {
     
     var friendData: [String] = []
     var uid: String = ""
-    
     static let sharedController = FacebookController()
     let firebaseURL = FIRDatabase.database().referenceFromURL("https://rc2p-15dd8.firebaseio.com/")
+    
+    //FIREBASE FACEBOOK: Integration with Firebase through authentication from Facebook
 
     func facebookCredential() {
-        //FIREBASE: Integration with Firebase through authentication
         
         let credential = FIRFacebookAuthProvider.credentialWithAccessToken(FBSDKAccessToken.currentAccessToken().tokenString)
         
@@ -60,9 +60,9 @@ class FacebookController {
                 })
             }
         }
-    
     }
 
+    // FACEBOOK returns data on current user
     func returnMyData(){
         if((FBSDKAccessToken.currentAccessToken()) != nil){
             FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, first_name, last_name, gender"]).startWithCompletionHandler({ (connection, result, error) -> Void in
@@ -78,20 +78,32 @@ class FacebookController {
                     let firstName = resultdict.objectForKey("first_name") as! String
                     let lastName = resultdict.objectForKey("last_name") as! String
                     let gender = resultdict.objectForKey("gender") as! String
+                    
+                    // Adds Facebook data to Firebase
 
-                    print("Result Dict: \(resultdict)")
-                    print(fID)
+                    let detailedUser = ["fID": fID, "firstName": firstName, "lastName": lastName, "gender": gender]
+                    
+                    self.addUserDetail(detailedUser)
+                    
                  }
             })
         }
         
     }
     
-    func addUserDetail(firstName: String, lastName: String){
-        print(firstName)
+    // FIREBASE adds detailed user information to Firebase from Facebook
+    func addUserDetail(detailedUser: [String: AnyObject]){
+        let usersReference = self.firebaseURL.child("users/\(self.uid)")
         
+        usersReference.child("UserInfo").updateChildValues(detailedUser, withCompletionBlock: { (err, ref) in
+            if err != nil {
+                print(err)
+                return
+            }
+        })
     }
 
+    // FACEBOOK returns data on current user's friends with the app
     func returnFriendListData() {
         let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "/me/friends", parameters: nil)
         graphRequest.startWithCompletionHandler({ (connection, result, error) -> Void in
@@ -130,7 +142,8 @@ class FacebookController {
         })
     }
     
-    
+    // FIREBASE adds information on friends to Firebase from Facebook
+
     func createFriend(friendID: String, friendName: String) {
         let usersReference = firebaseURL.child("users/\(uid)")
         
